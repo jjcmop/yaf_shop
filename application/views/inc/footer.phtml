@@ -1,0 +1,54 @@
+<?php
+$db = new dbModel();
+$linkData = $db->action("SELECT * FROM tab_links WHERE status = 1");
+?>
+<!--    底部公共    -->
+<footer id="footer">
+    <!--   友情链接   -->
+    <div class="f_link_box container">
+        <div class="title_box cf">
+            <p class="tit_name fl">友情链接</p>
+        </div>
+        <ul class="link_content_ul cf">
+            <?php foreach ($linkData as $kl=>$vl): ?>
+                <li class="each_sub_link fl"><a href="<?=$vl['link_url']?>" class="link_a" target="_blank"><?=$vl['title']?></a></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <!--  版权信息   -->
+    <div class="footer_box">
+        <div class="container cf">
+            <div class="footerContentWrap fl">
+                <div class="subCopy aboutUs">
+                    <a href="javascript:void(0)">关于我们</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">商务合作</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">合作伙伴</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">客服帮助</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">注册协议</a>
+                </div>
+                <div class="subCopy">
+                    <a href="javascript:void(0)">防沉迷系统</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">未成年家长监护工程</a>
+                    <span>|</span>
+                    <a href="javascript:void(0)">《网络游戏服务格式化协议必备条款》</a>
+                </div>
+                <div class="subCopy">
+                    <p>深圳玩转游戏兑换平台 © 2018 zhishengwh 版权所有 shop.zhishengwh.com</p>
+                </div>
+                <div class="subCopy">
+                    <p>网站备案：粤ICP备18083935号-1</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/public.js"></script>
+

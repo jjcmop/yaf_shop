@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>兑换列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/list.css">
+</head>
+<body class="homeMain">
+<!--    公共头部    -->
+<?php load_view("inc/header");?>
+
+<div class="container">
+    <!--   面包屑   -->
+    <div class="crumbs">您的位置：<span>首页></span><span>全部游戏</span></div>
+    <div class="ul_box">
+        <ul class="list_ul active">
+            <?php foreach($content as $k=>$v): ?>
+            <li class="cf">
+                <img src="/uploads/<?=$v['fileicon']?>" width="120" height="120" class="fl list_img" alt="">
+                <div class="fl list_info">
+                    <p class="ofh" title="★点点专卖★五星签约★<?=$v['title_input']?>">全部游戏★点点专卖★五星签约★<?=$v['title_input']?></p>
+                    <p>商品种类：<?=$v['shop_type']?></p>
+                    <p>游戏/区/服： <?=$v['name_select']?> / <?=$v['area_select']?></p>
+                </div>
+                <div class="fl list_money"><span><?=$v['money_input']?></span><span>元</span></div>
+                <div class="fr"><a class="look_btn" href="/Index/details?type=<?=$type?>&id=<?=$v['id']?>">查看详情</a></div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        <div style="text-align: center;padding: 30px 0;">分页BOX</div>
+    </div>
+
+</div>
+
+<!--    底部公共    -->
+<?php load_view("inc/footer");?>
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/public.js"></script>
+<script src="/public/js/list.js"></script>
+</body>
+</html>

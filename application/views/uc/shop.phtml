@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>个人中心-发布产品</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/uc.css">
+</head>
+<body class="homeMain">
+<!--    公共头部    -->
+<?php load_view("inc/ucheader");?>
+
+<!--   content   -->
+<div class="container">
+    <!--   面包屑   -->
+    <div class="crumbs">您的位置：<span>首页 ></span><span> 个人中心</span><span> 商品信息</span></div>
+    <div class="uc_box cf">
+        <?php load_view("inc/ucleft");?>
+        <div class="uc_right fr">
+            <div class="preview" style="margin:0 0 20px 0;">
+                <div class="pre_h cf"><span class="pre_title fl">商品信息</span><span class="pre_price fl">单价</span><span class="pre_num fl">数量</span><span class="pre_rece fl">状态</span></div>
+                <?php foreach ($data as $k=>$v): ?>
+                <div class="pre_box cf">
+                    <div class="fl pre_title cf">
+                        <img src="/uploads/<?=$v['fileicon']?>" id="ylimg" width="120" height="120" class="fl list_img" alt="">
+                        <div class="fl pre_text">
+                            <p class="ofh" id="pre_title"><?=$v['title_input']?></p>
+                            <p class="ofh">商品种类: <span id="pre_type"><?=$v['shop_type']?></span></p>
+                            <p class="ofh">游戏/区/服: <span id="pre_area1"><?=$v['name_select']?></span><span id="pre_area2"><?=$v['area_select']?></span></p>
+                        </div>
+                    </div>
+                    <div class="pre_price pre_l fl"><span>￥</span><span id="pre_price"><?=$v['money_input']?></span></div>
+                    <div class="pre_num pre_l fl"><span id="pre_num"><?php if($_GET['type'] == 'sell'){ echo $v['sell_status']; }else{ echo $v['input_num']; }?></span><span>件</span></div>
+                    <div class="pre_rece pre_l fl"><span style="<?=$color?>"><?=$text?></span></div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/public.js"></script>
+<script src="/public/js/uc.js"></script>
+</body>
+</html>

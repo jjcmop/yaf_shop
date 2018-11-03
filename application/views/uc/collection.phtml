@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>我的收藏</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/collection.css">
+</head>
+<body class="homeMain">
+    <!--    公共头部    -->
+    <?php load_view("inc/ucheader");?>
+    <!--     content     -->
+    <div class="container">
+        <!--   面包屑   -->
+        <div class="crumbs">您的位置：<span>首页 ></span><span> 个人中心</span></div>
+        <div class="uc_box cf">
+
+            <?php load_view("inc/ucleft");?>
+
+            <div class="uc_right fr">
+                <div class="buy_title"><span>我的收藏</span></div>
+                <div class="user_time cf">
+                    <p class="time_box fl cf">
+                        <span class="time_text fl">交易类型：</span>
+                        <select>
+                            <option value ="请选择">请选择</option>
+                        </select>
+                    </p>
+                    <p class="cf">
+                        <span class="order_text fl">关键词：</span>
+                        <input class="user_search fl" type="text" name="" placeholder="请输入商品标题或订单编号">
+                        <input class="button" type="button" value="搜索">
+                    </p>
+                </div>
+                <div class="collection_box">
+                    <div class="collection_title cf">
+                        <p class="fl cf"><i class="check_i fl"></i><span class="fl">全选</span><span class="delete">删除</span></p>
+                        <p class="col_d fl">商品详情</p>
+                        <p class="col_d1 fl">商品类型</p>
+                        <p class="col_d2 fl">数量</p>
+                        <p class="col_d3 fl">金额</p>
+                        <p class="col_d4 fl">操作</p>
+                    </div>
+                    <ul class="col_ul">
+                        <?php foreach ($data as $key=>$value): ?>
+                        <li class="cf">
+                            <i class="check_info fl"></i>
+                            <div class="col_box fl">
+                                <p class="buy_box_title ofh">【神枪手】 女 85级 QQ等级0级无QQ 好友</p>
+                                <p class="buy_type ofh">商品种类：游戏账号</p>
+                                <p class="buy_area ofh">游戏/区/服： 地下城与勇士 / 江苏区 / 江苏3区</p>
+                            </div>
+                            <p class="col_d1 buy_li_info fl">金币交易</p>
+                            <p class="col_d2 buy_li_info fl">1</p>
+                            <p class="col_d3 buy_li_info fl">299.00</p>
+                            <div class="col_d4 fl">
+                                <p class="at_once">立即购买</p>
+                                <p class="de_btn">删除</p>
+                            </div>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <div style="text-align: center;padding: 30px 0;">分页BOX</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/public.js"></script>
+    <script src="/public/js/collection.js"></script>
+</body>
+</html>

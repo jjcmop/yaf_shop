@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>增加地址</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/address.css">
+</head>
+<body class="homeMain">
+    <!--    公共头部    -->
+    <?php load_view("inc/header");?>
+    <!--     content     -->
+    <div class="container">
+        <!--   面包屑   -->
+        <div class="crumbs">您的位置：<span>首页 ></span><span> 个人中心</span></div>
+        <div class="uc_box cf">
+            <?php load_view("inc/ucleft");?>
+            <div class="uc_right fr">
+                <div class="buy_title cf"><span class="fl">已保存收货地址</span><span class="fr address_text address_btn">+新增地址</span></div>
+                <div class="add_box">
+                    <p class="address_title cf"><span class="add1 fl">收货人</span><span class="add2 fl">地址</span><span class="add3 fl">联系方式</span><span class="add4 fl">操作</span><span class="add5 fl">设默认地址</span></p>
+                    <ul class="address_ul">
+                        <li class="cf" data-id="1">
+                            <span class="add1 add_l fl">黄帅哥</span>
+                            <span class="add2 fl">广东省深圳市南山区深圳市南山区桃源街道隆回花园10栋621</span>
+                            <span class="add3 add_l tel fl">17688830262</span>
+                            <div class="add4 add_l fl cf"><span class="address_btn">编辑</span><span class="del_btn">删除</span></div>
+                            <span class="add5 fl de_r default set_add">默认地址</span>
+                        </li>
+                        <li class="cf" data-id="2">
+                            <span class="add1 add_l fl">万哥哥</span>
+                            <span class="add2 fl">广东省深圳市罗湖区深圳市罗湖区笋岗街道岭南花园2栋1023号</span>
+                            <span class="add3 add_l tel fl">15728009723</span>
+                            <div class="add4 add_l fl cf"><span class="address_btn">编辑</span><span class="del_btn">删除</span></div>
+                            <span class="add5 add_l fl de_r set_add">设为默认地址</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新建地址 -->
+        <div class="get_coupon_alert hide">
+            <div class="alert_title cf"><span class="fl">新建地址</span><i class="close_btn close fr"></i></div>
+            <div class="sub_form cf">
+                <div class="form_name fl"><span class="star">*</span>所在地区 ：</div>
+                <div class="sub_form_con fl cf">
+                    <select class="province_box fl">
+                        <option value="">广东省</option>
+                    </select>
+                    <select class="city_box fl">
+                        <option value="">深圳市</option>
+                    </select>
+                    <select class="district_box fl">
+                        <option value="">罗湖区</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sub_form cf">
+                <div class="form_name fl"><span class="star">*</span>详细地址 ：</div>
+                <div class="sub_form_con fl">
+                    <textarea class="detail_address" name="" placeholder="详细地址、街道、门牌号等"></textarea>
+                </div>
+            </div>
+            <div class="receiving_telephone cf">
+                <div class="receiving cf fl">
+                    <div class="form_name fl"><span class="star">*</span>收货人 ：</div>
+                    <div class="sub_form_con fl">
+                        <input class="receiver" type="text">
+                    </div>
+                </div>
+                <div class="cf fl">
+                    <div class="form_name fl"><span class="star">*</span>手机号码 ：</div>
+                    <div class="sub_form_con fl">
+                        <input class="phone_num" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="sure_btn sub_form cf">
+                <div class="cf fl">
+                    <div class="form_name fl"></div>
+                    <div class="active_default fl">
+                        <i class="active_default_icon active_icon"></i>
+                        <span class="default_text">设为默认</span>
+                    </div>
+                </div>
+                <div class="btn fl">
+                    <a class="sure" href="javascript:;">确定</a>
+                    <a class="cancel close" href="javascript:;">取消</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 删除地址 -->
+        <div class="get_del_alert hide">
+            <div class="alert_title cf"><span class="fl">要删除此地址吗？</span><i class="close_btn close fr"></i></div>
+            <div class="del_detail">
+                <p><span class="del_name dib">收件人：</span><span class="del_text add_name">致晟小帅</span></p>
+                <p><span class="del_name dib">联系电话：</span><span class="del_text add_tel tel">17688830262</span></p>
+                <p><span class="del_name dib">收件地址：</span><span class="del_text add_address">广东省深圳市罗湖区水田二街3号宝琳国金大厦4楼D区</span></p>
+            </div>
+            <div class="sure_btn sub_form_del_btn sub_form">
+                <a class="sure" href="javascript:;">确定</a>
+                <a class="cancel close" href="javascript:;">取消</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/jquery.ext.js"></script>
+    <script src="/public/js/public.js"></script>
+    <script src="/public/js/address.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><?=$content['title_input']?></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/details.css">
+</head>
+<body>
+<!--    公共头部    -->
+<?php load_view("inc/header");?>
+
+<!--    content    -->
+<div class="content_box container">
+
+    <!--  导航栏  -->
+    <div class="common_nav_bar">
+        <a class="sub_bar" href="javascript:void(0)">首页</a> &gt;
+        <a class="sub_bar" href="javascript:void(0)">兑换中心</a> &gt;
+        <a class="sub_bar" href="javascript:void(0)"><?=$content['shop_type']?></a> &gt;
+        <a class="sub_bar" href="javascript:void(0)"><?=$content['name_select']?></a>
+    </div>
+
+    <!--   商品介绍部分   -->
+    <div class="goods_box cf">
+        <div class="goods_left fl">
+            <div class="goods_big"><img src="/uploads/<?=$content['fileicon']?>" height="540" width="540" alt=""></div>
+        </div>
+        <div class="goods_right fl">
+            <div class="goods_name ofh" title="">★点点专卖★五星签约★<?=$content['title_input']?></div>
+            <div class="goods_explain"></div>
+            <div class="good_grey_box">
+                <div class="goods_grey_top cf">
+                    <div class="cf sub_goods_grey fl"><p class="goods_tit fl">商品价格：</p><p class="fl now_price">￥<span class="goods_price"><?=$content['money_input']?></span></p><p class="fl last_price">￥<span><?=$content['money_input']?></span></p></div>
+                    <div class="cf sub_goods_grey fl"><p class="goods_tit fl">游戏区服：</p><p class="fl clothes ofh"><?=$content['name_select']?> /<?=$content['area_select']?></p></div>
+                    <div class="cf sub_goods_grey fl"><p class="goods_tit fl">商品数量：</p><p class="fl clothes ofh"><?=$content['input_num']?></p></div>
+                </div>
+                <div class="goods_grey_bottom cf">
+                    <div class="cf sub_goods_grey goods_g fl"><?=$content['spec']?></div>
+<!--                    <div class="cf sub_goods_grey goods_g fl"><div class="goods_tit fl">QQ 好友：</div><p class="fl ofh"><span>手店桶自营品牌</span></p><div class="goods_tit fl">角色职业：</div><p class="fl ofh"><span>剑圣</span></p></div>-->
+                </div>
+            </div>
+            <div class="operate_box cf">
+                <a class="btn_buy fl" href="/Order/index?type=index">立即购买</a>
+                <a class="btn_add_cart fl" href="javascript:void(0)">咨询客服</a>
+
+                <?php if(!empty($mycollectionData)): ?>
+                    <a id="mycollection" class="btn_fav fl active"  href="javascript:void(0)" name="click1" style="">
+                        <i></i>收藏
+                    </a>
+                <?php else: ?>
+                    <a id="mycollection" class="btn_fav fl"  href="javascript:void(0)" name="click2"><i></i>收藏</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <!--   商品详情部分   -->
+    <div class="detail_box cf">
+        <div class="detail_left fl">
+            <div class="detail_tab cf">
+                <a class="sub_detail_tab active" href="javascript:void(0)">详情</a>
+                <a class="sub_detail_tab" href="javascript:void(0)">购买帮助</a>
+            </div>
+            <div class="detail_con detail_li active">
+                <div class="sub_detail_con">
+                    <div class="specifications">
+                        <ul class="cf">
+                            <li class="fl"><span>商品编号：</span><span>DB059-20180805-13871955</span></li>
+                            <li class="fl"><span>商品类型：</span><span><?=$content['shop_type']?></span></li>
+                            <li class="fl"><span>发布时间：</span><span><?=$content['createtime']?></span></li>
+                            <li class="fl"><span>到期时间：</span><span><?=$content['expiredtime']?></span></li>
+                        </ul>
+                        <div class="parameter">
+                            <span>商品描述：</span>
+                            <p><?=$content['info']?></p>
+
+                        </div>
+                    </div>
+                    <div class="pr">
+                        <div class="broadcast_title cf">
+                            <p class="fl pr"><i class="fl"></i>玩转游戏上号认证图片</p>
+                        </div>
+                        <div class="classify_box cf">
+                            <a class="fl active" href="javascript:void(0);">角色和人物</a>
+                            <a class="fl" href="javascript:void(0);">冒险团</a>
+                            <a class="fl" href="javascript:void(0);">时装</a>
+                            <a class="fl" href="javascript:void(0);">背包仓库</a>
+                            <a class="fl" href="javascript:void(0);">宠物</a>
+                            <a class="fl" href="javascript:void(0);">技能</a>
+                            <a class="fl" href="javascript:void(0);">装备</a>
+                        </div>
+                        <div class="role_box">
+                            <div class="pr dib"><img src="/public/images/details/ex_bg.png" alt=""><span class="ident_text">玩转游戏 专业认证截图</span></div>
+                            <div class="pr dib"><img src="/public/images/details/ex_bg.png" alt=""><span class="ident_text">玩转游戏 专业认证截图</span></div>
+                        </div>
+
+                    </div>
+                    <div class="seller">
+                        <div class="broadcast_title cf">
+                            <p class="fl pr"><i class="fl"></i>卖家上传图片</p>
+                        </div>
+                        <div class="seller_box">
+                            <?php for($i=0;$i<count($arrpic);$i++): ?>
+                            <img style="display: block;margin: 0 auto;" src="/uploads/<?=$arrpic[$i]?>" alt="">
+                            <?php endfor; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="purchase_con detail_li">
+                <p class="pur_title">购买帐号如何不被卖家找回？</p>
+                <p>1、建议您挑选大卖家提供的帐号，如五星大卖家经过玩转认证，帐号安全不易被找回。</p>
+                <p>2、挑选带有安全保障服务的帐号，购买时可以修改一些关键性找回资料，帐号安全性较高。</p>
+                <p>3、普通类帐号建议购买后马上登录游戏官网修改安全性资料，有助于提升帐号安全。</p>
+                <p class="pur_title">找不到客服或者客服不在线怎么办？</p>
+                <p>1、在您下单购买后，可以自主选择一位客服为您服务；如果中断了流程您还可以进入我的玩转→我是买家→我购买的商品，找到您当前购买的帐号，即可查到您的接手客服QQ号码。</p>
+                <p>2、您的接手客服不在线，您可以联系帐号频道页在线客服，协助您处理您遇到的问题。</p>
+                <p class="pur_title">什么是过户？</p>
+                <p>1、过户就是将卖家帐号的注册邮箱、身份证等信息更改为买家资料的一种服务。</p>
+                <p>2、您只需要购买时选择过户服务，支付所需费用及提供过户所需资料，接下来玩转会全程帮您处理，整个过程需要1-15个工作日完成（不同游戏办理时间不同），请耐心等待，过户成功后玩转会通知您来取号。</p>
+                <p class="pur_title">如何验证真假客服？</p>
+                <p>1、在玩转首页“真假客服验证”处，输入客服QQ号即可验证客服真假；真客服QQ必定为纯数字，如带有下划线、字符、后缀的QQ号码必为假客服。</p>
+                <p>2、真客服只有您在支付完成后才会出现，由您自己选择产生，请勿向他人提供任何帐号密码、资料信息，谨防被骗。</p>
+            </div>
+        </div>
+        <div class="detail_right fl cf">
+            <div class="tit fl">浏览记录</div>
+            <div class="con fl">
+                <ul class="cf">
+                    <li class="fl sub_goods_box copy" data-num="5">
+                        <p class="goods_box_name"><i class="dib"></i>【跨1华南区 大暗黑天 男 90级 QQ等级19级 无QQ好友 不存在5天封号记录 】天帝星辰套+三神器+11氤氲之息+红字</p>
+                        <p class="goods_box_price">￥<span>239</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="tit fl">大家都在看</div>
+            <div class="con fl">
+                <ul class="cf">
+                    <li class="fl sub_goods_box copy" data-num="5">
+                        <p class="goods_box_name"><i class="dib"></i>【跨1华南区 大暗黑天 男 90级 QQ等级19级 无QQ好友 不存在5天封号记录 】天帝星辰套+三神器+11氤氲之息+红字</p>
+                        <p class="goods_box_price">￥<span>239</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--    底部公共    -->
+<?php load_view("inc/footer");?>
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/public.js"></script>
+<script src="/public/js/details.js"></script>
+<script src="/public/js/js_cookie.js"></script>
+
+<script>
+$(function () {
+    $("#mycollection").click(function () {
+
+        var tag = $(this).attr("name");
+        var user = '<?=$_COOKIE['account']?>';
+        var id = <?=$_GET['id']?>;
+
+        if(tag == 'click2'){
+            if(user == ""){
+                alert('您还没有登录，请先登录');
+                window.location.href='http://www.zhishengwh.com/index/Login/login.html?login=shop';
+            }else{
+                $.get("/Uc/ajaxcollect",{u:user,id:id,t:tag},function (msg) {
+                    if(msg.code == 0){
+                        $("#mycollection").css({color: "#F8981D",border: "1px solid #F8981D"});
+                        $("#mycollection").find("i").attr("style","background: url('/public/images/details/fav_org.png' ) no-repeat center center");
+                        $("#mycollection").attr("name",'click1');
+                    }
+                },"json");
+            }
+        }else{
+            $.get("/Uc/ajaxcollect",{u:user,id:id,t:tag},function (msg) {
+                if(msg.code == 0) {
+                    $("#mycollection").css({color: "#999", border: "1px solid #CCC"});
+                    $("#mycollection").find("i").attr("style", "background: url('/public/images/details/fav_grey.png' ) no-repeat center center");
+                    $("#mycollection").attr("name", 'click2');
+                }
+            },"json");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

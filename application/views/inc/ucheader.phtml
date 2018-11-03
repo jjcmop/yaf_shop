@@ -1,0 +1,20 @@
+<header class="header" id="header">
+    <!--  头部登录栏  -->
+    <div class="loginBox">
+        <div class="container cf">
+            <a class="fl m_btn" href="http://www.zhishengwh.com/wap" target="_blank"><i class="dib"></i>玩转H5游戏&nbsp;</a>
+            <a class="fl m_btn" href="/Index/index" target="_blank"> | 返回首页</a>
+            <div class="fr">
+                <?php if(empty($_COOKIE['account'])): ?>
+                    <a class="m_btn login_btn" href="http://www.zhishengwh.com/index/Login/login.html?login=shop">登录</a>
+                    <a class="m_btn" href="http://www.zhishengwh.com/index/Login/register.html?login=shop"> | 注册 |</a>
+                <?php else: ?>
+                    <a class="m_btn login_btn" href="/Uc/index?type=index">您好，<?=$_COOKIE['account']?> 【个人中心】</a>
+                    <a class="m_btn" href="http://www.zhishengwh.com/index/Login/logout?login=shop"> | 退出 |</a>
+                <?php endif; ?>
+                <a class="m_btn" href="javascript:void(0);">关注我们</a>
+            </div>
+        </div>
+    </div>
+
+</header>

@@ -1,0 +1,69 @@
+<?php
+use Helper\Curl;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>个人中心-发布产品</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/user.css">
+</head>
+<body class="homeMain">
+<!--    公共头部    -->
+<?php load_view("inc/ucheader");?>
+
+<!--   content   -->
+<div class="container">
+    <!--   面包屑   -->
+    <div class="crumbs">您的位置：<span>首页 ></span><span> 个人中心</span></div>
+    <div class="uc_box cf">
+        <?php load_view("inc/ucleft");?>
+        <div class="uc_right fr">
+            <div class="user_box">
+                <p class="user_title">我的账户</p>
+                <div class="user_money cf">
+                    <p class="fl"><span class="user_name">我的余额：</span><span class="money_text">0.00</span><span class="element">元</span></p>
+                    <p class="user_btn fl"><a href="javascript:void(0);">提现</a><a href="javascript:void(0);">充值</a></p>
+                </div>
+            </div>
+            <div class="user_detail">
+                <p class="user_title">资金明细</p>
+                <div class="user_time cf">
+                    <p class="time_box fl cf">
+                        <span class="time_text fl">创建时间：</span>
+                        <input type="date" class="fl start_time" max="" placeholder="开始时间">
+                        <span class="fl">至</span>
+                        <input type="date" class="fl end_time" min="" placeholder="结束时间">
+                    </p>
+                    <p class="cf">
+                        <span class="order_text fl">订单号：</span>
+                        <input class="user_search fl" type="text" name="">
+                        <input class="button" type="button" value="搜索">
+                    </p>
+                </div>
+                <div class="user_list">
+                    <p class="cf user_head"><span class="user_t1 fl">订单号</span><span class="user_t2 fl">时间</span><span class="user_t3 fl">支付金额</span><span class="user_t4 fl">支付渠道</span><span class="user_t5 fl">当前状态</span></p>
+                    <ul class="user_ul cf">
+                        <li class="copy fl" data-num="8">
+                            <span class="user_t1 fl">DB20180903642347063</span><span class="user_t2 fl">2018-09-27</span><span class="user_t3 fl">100.00</span><span class="user_t4 fl">支付宝支付</span><span class="user_t5 fl">交易成功</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="text-align: center;margin-top: 30px;">分页BOX</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/public.js"></script>
+<script src="/public/js/user.js"></script>
+
+</body>
+</html>

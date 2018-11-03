@@ -1,0 +1,50 @@
+<?php
+$type = empty($_GET['type']) ? "index":$_GET['type'];
+?>
+
+<header class="header" id="header">
+    <!--  头部登录栏  -->
+    <div class="loginBox">
+        <div class="container cf">
+            <a class="fl m_btn" href="http://www.zhishengwh.com/wap" target="_blank"><i class="dib"></i>玩转H5游戏</a>
+            <div class="fr">
+                <?php if(empty($_COOKIE['account'])): ?>
+                    <a class="m_btn login_btn" href="http://www.zhishengwh.com/index/Login/login.html?login=shop">登录</a>
+                    <a class="m_btn" href="http://www.zhishengwh.com/index/Login/register.html?login=shop"> | 注册 |</a>
+                <?php else: ?>
+                    <a class="m_btn login_btn" href="/Uc/index?type=index">您好，<?=$_COOKIE['account']?> 【个人中心】</a>
+                    <a class="m_btn" href="http://www.zhishengwh.com/index/Login/logout?login=shop"> | 退出 |</a>
+                <?php endif; ?>
+                <a class="m_btn" href="javascript:void(0);">关注我们</a>
+            </div>
+        </div>
+    </div>
+
+    <!--  搜索栏  -->
+    <div class="s_height">
+        <div class="search container cf">
+            <img src="/public/images/header/logo.png" title="logo" width="169" height="60" class="logo fl" onclick="location.href='http://www.zhishengwh.com/';">
+            <div class="search_box fr cf">
+                <form action="/List/search?type=index" method="post">
+                    <input type="text" class="fl" name="d" placeholder="搜索游戏完整名称" value="">
+                    <input type="submit" name="btn" id="com_search" style="width: 60px;height: 44px;margin: 0;" class="search_icon fr" value="">
+                    <div class="fl hot"><span>热门搜索词：</span><span class="hot_m">绝地求生</span><span class="hot_m">王者荣耀</span><span class="hot_m">世仙王</span><span class="hot_m">阴阳道绝</span></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--  导航tab栏  -->
+    <nav class="tab_t cf">
+        <div class="container">
+            <ul class="tab_t_wrap cf">
+                <li class="sub_tab <?php if($type == 'index'){echo 'active';} ?> "><a href="/Index/index?type=index" class="each_tab_link">首页</a></li>
+                <li class="sub_tab <?php if($type == 'gold'){echo 'active';} ?> "><a href="/Index/gold?type=gold" class="each_tab_link">金币交易</a></li>
+                <li class="sub_tab <?php if($type == 'account'){echo 'active';} ?> "><a href="/Index/account?type=account" class="each_tab_link">账号交易</a></li>
+                <li class="sub_tab <?php if($type == 'equipment'){echo 'active';} ?> "><a href="/Index/equipment?type=equipment" class="each_tab_link">装备交易</a></li>
+                <li class="sub_tab <?php if($type == 'practice'){echo 'active';} ?> "><a href="/Index/practice?type=practice" class="each_tab_link">游戏代练</a></li>
+                <li class="sub_tab <?php if($type == 'goods'){echo 'active';} ?> "><a href="/Index/goods?type=goods" class="each_tab_link">商品交易</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>

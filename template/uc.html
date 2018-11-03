@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>兑换列表</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/css/public.css">
+    <link rel="stylesheet" href="../public/css/uc.css">
+</head>
+<body class="homeMain">
+    <!--    公共头部    -->
+    <header class="header" id="header">
+        <!--  头部登录栏  -->
+        <div class="loginBox">
+            <div class="container cf">
+                <a class="fl m_btn" href="http://www.zhishengwh.com/wap" target="_blank"><i class="dib"></i>玩转H5游戏</a>
+                <div class="fr">
+                    <a class="m_btn login_btn hide" href="javascript:void(0);">登录</a>
+                    <a class="m_btn login_btn" href="javascript:void(0);">您好，17688830262【会员中心】</a>
+                    <a class="m_btn hide" href="javascript:void(0);"> | 注册 |</a>
+                    <a class="m_btn" href="javascript:void(0);"> | 退出 |</a>
+                    <a class="m_btn" href="javascript:void(0);">关注我们 |</a>
+                    <a class="m_btn login_btn" href="javascript:void(0);">跳转到玩转游戏</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--   content   -->
+    <div class="container">
+        <!--   面包屑   -->
+        <div class="crumbs">您的位置：<span>首页 ></span><span> 个人中心</span></div>
+        <div class="uc_box cf">
+            <div class="uc_left fl cf">
+                <div class="uc_name cf"><span class="name ofh fl w_100">17688830262</span><span class="fl">【在线】</span></div>
+                <div class="uc_name">
+                    <p class="cf"><span class="fl">买家成交量：</span><span class="ofh fl w_80">0</span></p>
+                    <p class="cf"><span class="fl">我的平台币：</span><span class="name ofh fl w_80">0.00</span></p>
+                    <p class="cf a_out"><a class="fl name" href="user.html">【我的账户】</a><a class="fr gray" href="javascript:void(0);">【退出登录】</a></p>
+                </div>
+                <div class="uc_name">
+                    <p class="a_out"><a class="name" href="uc.html">我要发布商品</a></p>
+                </div>
+                <div class="uc_name">
+                    <p class="a_out"><a href="buy_goods.html">我购买的商品</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">我卖出的商品</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">我收藏的商品</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">我收货的地址</a></p>
+                </div>
+                <div class="uc_last_name">
+                    <p class="a_out"><a href="javascript:void(0);">购买指南</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">发布指南</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">常见问题</a></p>
+                    <p class="a_out"><a href="javascript:void(0);">修改密码</a></p>
+                </div>
+            </div>
+            <div class="uc_right fr">
+                <p class="info_title">填写信息</p>
+                <form action="" method="">
+                    <div class="fill_box">
+                        <div class="fill_p">
+                            <span class="classify_left">游戏分类：</span>
+                            <span class="select">
+                            <select id="type_select" onclick="myFunction3()">
+                                <option value ="商品类型">商品类型</option>
+                            </select>
+                        </span>
+                            <span class="select">
+                            <select id="name_select" onclick="myFunction4()">
+                                <option value ="游戏名称">游戏名称</option>
+                            </select>
+                        </span>
+                            <span class="select">
+                            <select id="area_select" onclick="myFunction5()">
+                                <option value ="游戏区">游戏区</option>
+                            </select>
+                        </span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">商品标题：</span>
+                            <input class="title_input" id="text_input" oninput="myFunction()" type="text" required placeholder="建议填写个性化商品标题，可吸引人眼球">
+                            <span class="title_text">请输入商品标题，保持在40字以内</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">商品单价：</span>
+                            <input class="money_input" oninput="myFunction1()" id="money_input" required  type="number" placeholder="0">
+                            <span class="money_text">元</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">发布数量：</span>
+                            <input class="money_input" oninput="myFunction2()" id="input_num" required  type="number" placeholder="1">
+                            <span class="money_text">件</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">商品描述：</span>
+                            <textarea class="des_textarea" rows="3" cols="20" required  placeholder="请勿填写与本商品无关的广告信息和联系方式，否则您的账号会被封禁"></textarea>
+                            <span class="title_text">请输入商品标题，保持在40字以内</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">游戏规格：</span>
+                            <textarea class="des_textarea" rows="3" cols="20" required  placeholder="QQ等级：QQ等级40级以上；&#10;角色等级：QQ等级40级以上；&#10;角色职业：剑圣"></textarea>
+                            <span class="title_text">请输入商品标题，保持在40字以内</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">游戏图标：</span>
+                            <span class="file-box pr"><span id="filename">点击此处上传文件</span><input onchange="getFilename();yl(this,'ylimg')" class="file-btn" name="file" id="file" onclick="getFilename()" type="file" /></span><span class="title_text">选择上传的图片最佳是120px*120px</span>
+                        </div>
+                        <div class="fill_p">
+                            <span class="classify_left">商品图片：</span>
+                            <span class="file-box pr"><span id="filename2">点击此处上传文件</span><input class="file-btn" name="file" id="file2" onchange="getFilename2()" type="file" /></span><span class="title_text">选择上传的图片最佳是1200px*300px</span>
+                        </div>
+                        <div class="sure_btn">
+                            <input type="submit" value="确定发布">
+                        </div>
+                    </div>
+                </form>
+                <div class="preview">
+                    <div class="pre_h cf"><span class="pre_title fl">商品预览</span><span class="pre_price fl">单价</span><span class="pre_num fl">数量</span><span class="pre_rece fl">应收</span></div>
+                    <div class="pre_box cf">
+                        <div class="fl pre_title cf">
+                            <img src="../public/images/list/list_nav.png" id="ylimg" width="120" height="120" class="fl list_img" alt="">
+                            <div class="fl pre_text">
+                                <p class="ofh" id="pre_title"></p>
+                                <p class="ofh">商品种类: <span id="pre_type"></span></p>
+                                <p class="ofh">游戏/区/服: <span id="pre_area1"></span><span id="pre_area2"></span></p>
+                            </div>
+                        </div>
+                        <div class="pre_price pre_l fl"><span>￥</span><span id="pre_price"></span></div>
+                        <div class="pre_num pre_l fl"><span id="pre_num"></span><span>件</span></div>
+                        <div class="pre_rece pre_l fl"><span>￥</span><span id="pre_rece"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/jquery.js"></script>
+    <script src="../public/js/public.js"></script>
+    <script src="../public/js/uc.js"></script>
+
+</body>
+</html>

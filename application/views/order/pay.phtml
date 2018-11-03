@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>订单支付</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/order.css">
+</head>
+<body>
+    <!--    公共头部    -->
+    <?php load_view("inc/header");?>
+
+    <!--    content    -->
+    <div class="container">
+        <!--  进度条  -->
+        <div class="forget_guide pr">
+            <span class="forget_one dib active">1.填写订单</span>
+            <span class="forget_two dib active">2.支付订单</span>
+            <span class="forget_three dib">3.领取资料</span>
+            <span class="forget_four dib">4.交易成功</span>
+        </div>
+        <p class="seller_title">订单支付&nbsp;&nbsp;<span class="sure">请确认订单信息并付款</span></p>
+        <div class="info_box cf">
+            <i class="fl"></i>
+            <div class="fl">
+                <p class="title ofh">【风暴骑兵 女 90级 QQ等级11-20级 无QQ好友 不存在5天封号记录 】★大象专卖★天空套，攻城炮恍惚万世三神器</p>
+                <p class="title ofh">商品类型：帐号</p>
+                <p class="title ofh">所在区/服：地下城与勇士/ 腾讯/ 广东区/广东6区/</p>
+                <p class="title ofh">订单号：DB20180903602736036</p>
+                <p class="title ofh">购买时间：2018年09月03日 16:44:33</p>
+                <p class="title ofh pay_m">支付金额：199.00</p>
+            </div>
+        </div>
+        <p class="public_title">支付方式</p>
+        <ul class="pay_box cf">
+            <li class="fl cf active"><i class="un_select fl"></i><div class="alipay fl"><i></i><span>支付宝支付</span></div></li>
+            <li class="fl cf"><i class="un_select fl"></i><div class="wxpay fl"><i></i><span>微信支付</span></div></li>
+        </ul>
+        <a class="pay_btn" href="/Order/receive?type=index">立即支付</a>
+    </div>
+
+    <!--    底部公共    -->
+    <?php load_view("inc/footer");?>
+
+    <script src="/public/js/jquery.js"></script>
+    <script src="/public/js/public.js"></script>
+    <script src="/public/js/pay.js"></script>
+</body>
+</html>

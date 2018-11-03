@@ -1,0 +1,27 @@
+<div class="uc_left fl cf">
+    <div class="uc_name cf"><span class="name ofh fl w_100"><?=$_COOKIE['account']?></span><span class="fl">【在线】</span></div>
+    <div class="uc_name">
+        <p class="cf"><span class="fl">买家成交量：</span><span class="ofh fl w_80">0</span></p>
+        <p class="cf"><span class="fl">我的平台币：</span><span class="name ofh fl w_80">0.00</span></p>
+        <p class="cf a_out"><a class="fl <?php if($_GET['type'] == 'index'){echo 'name';}?>" href="/Uc/index?type=index">【我的账户】</a><a class="fr gray" href="javascript:void(0);">【退出登录】</a></p>
+    </div>
+    <div class="uc_name">
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'productrelease'){echo 'name';}?>" href="/Uc/productrelease?type=productrelease">我要发布商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 's'){echo 'name';}?>" href="/Uc/shop?type=s">审核中的商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'e'){echo 'name';}?>" href="/Uc/shop?type=e">审核失败商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'p'){echo 'name';}?>" href="/Uc/shop?type=p">上架商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'n'){echo 'name';}?>" href="/Uc/shop?type=n">下架商品</a></p>
+    </div>
+    <div class="uc_name">
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'buy'){echo 'name';}?>" href="/Uc/buygoods?type=buy">我购买的商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'sell'){echo 'name';}?>" href="/Uc/shop?type=sell">我卖出的商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'collection'){echo 'name';}?>" href="/Uc/collection?type=collection">我收藏的商品</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'address'){echo 'name';}?>" href="/Uc/address?type=address">我收货的地址</a></p>
+    </div>
+    <div class="uc_last_name">
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'buyguide'){echo 'name';}?>" href="/Uc/buyguide?type=buyguide">购买指南</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'releaseguide'){echo 'name';}?>" href="/Uc/releaseguide?type=releaseguide">发布指南</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'commonproblem'){echo 'name';}?>" href="/Uc/commonproblem?type=commonproblem">常见问题</a></p>
+        <p class="a_out"><a class="<?php if($_GET['type'] == 'modifypwd'){echo 'name';}?>" href="/Uc/modifypwd?type=modifypwd">修改密码</a></p>
+    </div>
+</div>

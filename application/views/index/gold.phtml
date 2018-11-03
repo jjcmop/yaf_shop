@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>金币交易</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/public/css/base.css">
+    <link rel="stylesheet" href="/public/css/public.css">
+    <link rel="stylesheet" href="/public/css/gold.css">
+</head>
+<body class="homeMain">
+
+    <?php load_view("inc/header");?>
+
+    <!--     content     -->
+    <div class="content_box container">
+
+        <!--    金币交易头部    -->
+        <div class="trade_box cf">
+            <em style="display: inline-block;width: 880px;height: 400px; background: url(/public/images/banner/logo1.jpg);background-size: 100% 100%;"></em>
+<!--            <img class="fl" src="/public/images/banner/logo1.jpg" width="880" height="400" alt="">-->
+            <div class="hot_right fr">
+                <ul class="btn_ul cf">
+                    <li class="buy_li fl"><a class="cf" href="/List/allindex?type=gold"><i class="fl"></i><p class="fl">我要买</p></a></li>
+                    <li class="sell_li fr"><a class="cf" href="/Uc/productrelease?type=productrelease"><i class="fl"></i><p class="fl">我要卖</p></a></li>
+                </ul>
+                <!--  广告位  -->
+                <div class="ad"><a href="http://www.zhishengwh.com/" target="_blank" style="display: block;"><img src="/public/images/index/ad.png" alt=""></a></div>
+                <div class="notice">
+                    <div class="n_title"><p>公告</p></div>
+                    <ul class="n_ul">
+                        <li class="copy" data-num="4"><a class="cf" href="javascript:void(0);"><p class="n_text ofh fl">王者荣耀不会增加新段位，但会取消铭文，不过补偿超诱人</p><span class="n_date fr">09-04</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--      热门推荐      -->
+        <div class="hot_recommend pr">
+            <div class="broadcast_title cf">
+                <p class="fl pr">商品推荐<span class="line_l"></span></p>
+                <a class="fr" href="javascript:void(0);">更多</a>
+            </div>
+            <div class="classify_content">
+                <ul class="classify_ul cf active">
+                    <?php foreach ($content as $key=>$value): ?>
+                    <li class="fl">
+                        <a href="/List/index?type=gold&apkname=<?=$value['name_select']?>&shoptype=<?=$value['shop_type']?>">
+                            <img src="/uploads/<?=$value['fileicon']?>" width="140" height="140" alt="">
+                            <p class="s_title ofh"><?=$value['name_select']?></p>
+                            <p class="s_text ofh"><?=$value['title_input']?></p>
+                            <p class="s_text1 ofh"><?=$value['spec']?></p>
+                            <p class="s_exp ofh">￥<?=$value['money_input']?></p>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <?php load_view("inc/footer");?>
+    <script src="/public/js/gold.js"></script>
+</body>
+</html>
